@@ -1,0 +1,10 @@
+    $ vim subnet.tf
+    
+    // Create a subnet
+    resource "tencentcloud_subnet" "subnet_test" {
+        name = "subnet-test"
+        cidr_block = "10.0.1.0/24"
+        availability_zone = "ap-hongkong-1"
+        vpc_id = "${tencentcloud_vpc.vpc_test.id}"
+        route_table_id = "${tencentcloud_route_table.rtb_test.id}"
+    }
