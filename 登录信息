@@ -1,0 +1,3 @@
+username = 'admin'
+password = 'P@ssw0rd'
+cml_host = 'https://172.24.53.185'
