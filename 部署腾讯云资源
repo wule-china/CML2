@@ -1,0 +1,19 @@
+ $ vim cvm.tf
+    
+    // Create a cvm
+    resource "tencentcloud_instance" "cvm_test" {
+        instance_name = "cvm-test"
+        availability_zone = "ap-hongkong-1"
+        image_id = "img-pi0ii46r"
+        instance_type = "S2.SMALL1"
+        system_disk_type = "CLOUD_PREMIUM"
+      
+        security_groups = [
+            "${tencentcloud_security_group.sg_test.id}"
+        ]
+
+        vpc_id = "${tencentcloud_vpc.vpc_test.id"
+        subnet_id = "${tencentcloud_subnet.subnet_test.id}"
+        internet_max_bandwidth_out = 10
+        count = 1
+    }
