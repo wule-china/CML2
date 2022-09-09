@@ -1,0 +1,7 @@
+    $ vim vpc.tf
+    
+    // Create a vpc
+    resource "tencentcloud_vpc" "vpc_test" {
+        name = "vpc-test"
+        cidr_block = "10.0.0.0/16"
+    }
